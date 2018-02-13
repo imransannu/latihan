@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<center><h2>--Biodata--</h2></center>
+
+    <fieldset>
+        <legend>Personal Data</legend>
+        <table>
+            <tr>
+                <td><label for="nama">Nama</label></td>
+                <td>: <input type="text" id="nama" placeholder="Nama"></td>
+            </tr>
+            <tr>
+                <td><label for="ttl">Tempat tanggal lahir</label></td>
+                <td>: <input type="text" placeholder="Tempat lahir" id="ttl"></td>
+                <td><input type="date"  placeholder="dd/mm/yyyy" id="tgl"></td>
+            </tr>
+            <tr>
+                <td> <label>Gender</label></td>
+                <td>: <input type="radio" value="pria" id="pria" name="sex" checked> Pria
+                      <input type="radio" value="wanita" id="wanita" name="sex">Wanita
+                </td>
+            </tr>
+            <tr>
+                <td><label for="phone">No. Phone</label></td>
+                <td>: <input type="number" id="phone" placeholder="No phone"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email</label></td>
+                <td>: <input type="email" id="email" placeholder="nama@mail.com"></td>
+            </tr>
+        </table>       
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Riwayat Pendidikan</legend>
+        <table>
+            <tr>
+                <th></th>
+                <th>Nama Institusi</th>
+                <th>Tahun Lulus</th>
+            </tr>
+            <tr>
+                <td><label for="sd">SD</label></td>
+                <td><input type="text" id="sd"></td>
+                <td><input type="date" id="tglsd"></td>
+            </tr>
+            <tr>
+                <td><label for="smp">SMP</label></td>
+                <td><input type="text" id="smp"></td>
+                <td><input type="date" id="tglsmp"></td>
+            </tr>
+            <tr>
+                <td><label for="sma">SMA/SMK</label></td>
+                <td><input type="text" id="sma"></td>
+                <td><input type="date" id="tglsma"></td>   
+            </tr>
+            <tr>
+                <td><label for="sarjana">S1</label></td>
+                <td><input type="text" id="sarjana"></td>
+                <td><input type="date" id="tglsarjana"></td>               
+            </tr>
+        </table>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Riwayat Pekerjaan</legend>
+        <table>
+            <tr>
+                <th><label for="nama1">Nama Perusahaan </label></th>
+                <th><label for="lama">Lama bekerja </label></th>
+                <th><label for="posisi">Posisi </label></th>
+            </tr>
+            <tr>
+                <td><input type="text" id="nama1"></td>
+                <td><input type="number" id="tgllama"></td>
+                <td><input type="text" id="posisi"></td>
+            </tr>
+        </table>
+    </fieldset>
+
+<br>
+<button onclick="fungsi()">Submit</button>
+<hr>
+<p id="hasil1"></p>
+<script>
+    function fungsi(){
+        let nama = document.getElementById('nama').value;
+        let ttl = document.getElementById('ttl').value;
+        let tgl = document.getElementById('tgl').value;
+        let phone = document.getElementById('phone').value;
+        let email = document.getElementById('email').value;
+        let sd = document.getElementById('sd').value;
+        var tglsd = document.getElementById('tglsd').value;
+        let smp = document.getElementById('smp').value;
+        var tglsmp = document.getElementById('tglsmp').value;
+        let sma = document.getElementById('sma').value;
+        let tglsma = document.getElementById('tglsma').value;
+        let sarjana = document.getElementById('sarjana').value;
+        let nama1 = document.getElementById('nama1').value;
+        let posisi = document.getElementById('posisi').value;
+        let tglname = document.getElementById('tgllama').value;
+        var  kelamin ='';
+        if(document.getElementById('pria').checked===true){
+            kelamin+='Pria'
+        }else{
+            kelamin+='Wanita'
+        }
+
+        document.getElementById('hasil1').innerHTML='<table>'+
+                '<tr  style=background:gray>'+
+                    "<td>Personal Data </td>"+
+                '<tr>'+
+                    "<td>Nama </td>"+
+                    '<td>: '+nama+'</td>'+
+                '</tr>'+
+                '<tr>'+
+                    '<td>Tempat/tanggal lahir</td>'+
+                    '<td>: '+ttl+', '+tgl+'<td>'+
+                '</tr>'+
+                '<tr>'+
+                    '<td>Gender</td>'+
+                    '<td>: '+kelamin+'</td>'+
+                '</tr>'+
+                '<tr>'+
+                    '<td>No Telepon</td>'+
+                    '<td>: '+phone+'</td>'+
+                '</tr>'+
+                '<tr>'+
+                    '<td>E-mail</td>'+
+                    '<td>: '+email+'</td>'+
+                '</tr>'+
+                '<tr style=background:gray>'+
+                    "<td>Riwayat Pendidikan</td>"+
+                '<tr>'+
+                '<td>Tamat SD</td>'+
+                    '<td>: '+sd+'</td>'+
+                    '<td>Pada Tahun</td>'+
+                    '<td>: '+tglsd+'</td>'+
+                '</tr>'+
+                '<tr>'+
+                    '<td>Tamat SMP</td>'+
+                    '<td>: '+smp+'</td>'+
+                    '<td>Pada Tahun</td>'+
+                    '<td>: '+tglsmp+'</td>'+
+                '</tr>'+
+                '<tr>'+
+                    '<td>Tamat SMA</td>'+
+                    '<td>: '+sma+'</td>'+
+                    '<td>Pada Tahun</td>'+
+                    '<td>: '+tglsma+'</td>'+
+                '</tr>'+
+                '<tr  style=background:gray>'+
+                    "<td>Riwayat Pekerjaan</td>"+
+                '<tr>'+
+                '<tr>'+
+                    '<td>Pengalaman Kerja Di</td>'+
+                    '<td>: '+nama1+'</td>'+
+                    '<td>Posisi Sebagai</td>'+
+                    '<td>: '+posisi+'</td>'+
+                    '<td>Selama</td>'+
+                    '<td>: '+tglname+' tahun'+'</td>'+
+                '</tr>'+
+            '</table>';
+    }
+
+    
+</script>
+</body>
+</html>
